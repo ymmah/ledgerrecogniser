@@ -12,16 +12,20 @@ OpenCV provides the main functionality for working with images of archive pages.
 
 *```BoE digitised ledgers``` contains .jpg files of the digitised ledgers
 
-## 3. Neural Network Recognition Tool:
+## 3. Publications
+
+The recognition tool was used as the basis for Bank of England Working Paper No. 691, [The Bank of England as lender of last resort: new historical evidence from daily transactional data](https://www.bankofengland.co.uk/working-paper/2017/the-bank-of-england-as-lender-of-last-resort-new-historical-evidence-from-daily-transactional-data). The data read from ledgers can be found [here](https://www.bankofengland.co.uk/-/media/boe/files/research/the-bank-of-england-as-lender-of-last-resort-historical-dataset.xlsb?la=en&hash=5BC1800E6C6188AABEB79C8AEF6D5DFC5688B3B1). This anaylsis featured as a [Bank Underground post.](https://bankunderground.co.uk/2017/12/11/looking-inside-the-ledgers-the-bank-of-england-as-a-lender-of-last-resort/)
+
+## 4. Neural Network Recognition Tool:
 
 <p align="justify">The recognition tool is based on C++ implementation (suing OpenCV helper functions) and built in with a simple feed forward neural network trained with data extracted from digitised Bank of England archival discount ledger images directly. </p>  
 
-### 3.1 Feed-forward Neural Network:
+### 4.1 Feed-forward Neural Network:
 
 <p align="justify">This simple feed-forward neural network is adapted from open source code project here. It has a structure of 784 x 20 x10 which can be changed in ArchiveParser.h file. The training digit images have been normalised to 28 x 28 pixels hence a total number of 784 inputs. 10 outputs are simply the 10 digits being trained (1, 2… to 0). We only tested on one layer of hidden neurons and found 20 hidden neurons produce relatively the better performance.
 Once trained, the learned weights are stored in weights.csv file which will be loaded automatically by the recognition tool and used in real time recognition when being initialised when app starts. </p>  
 
-### 3.2 Training Data:
+### 4.2 Training Data:
 
 <p align="justify">The digits training data are extracted from digitised Bank of England archival discount ledger files (as shown in Figure 1):</p>  
 <p align="center">
@@ -37,7 +41,7 @@ Once trained, the learned weights are stored in weights.csv file which will be l
 
 <p align="justify">Due to the time constraints, we haven’t been able to produce more training patterns. We recommend that large number of training patterns will significantly improve the accuracy of the recognition. </p>  
 
-## 4. User Interface and Recognition Tool
+## 5. User Interface and Recognition Tool
 
 <p align="justify">The digit detection network is implemented as a class within a software tool that provides a user interface. The main reason for this is that detecting digits requires some manual interaction in order to guide the detector to appropriate regions and subsequently annotate the regions into useful data for analytics. 
 The user interface allows loading of images and requires additional development to put it into full use and to structure the interaction of the user to the code that is embedded in the software. This is because interaction requires various levels eg. image zoom and movement, selection of image regions etc. While not complicated these take time to get right and require normalisation of coordinates/image regions to function properly.
@@ -96,9 +100,9 @@ The tool will also save recognition results to a CSV file, results will look lik
   <br>Figure 9. Results are saved in CSV file
 </p>  
 
-## 5. Future Development Ideas:
+## 6. Future Development Ideas:
 
-<p align="justify">The tool implemented/experimented some basic features of detecting and recognising hand written figures from the mid-nineteenth century Bank of England discount ledger files. We haven’t been able to develop/investigate detailed implementation of the tool due to time constrains. It however opens the door for anyone who is interested in helping us dig out more of these buried treasures and make the tool more widely usable.
+The tool implemented/experimented some basic features of detecting and recognising hand written figures from the mid-nineteenth century Bank of England discount ledger files. We haven’t been able to develop/investigate detailed implementation of the tool due to time constrains. It however opens the door for anyone who is interested in helping us dig out more of these buried treasures and make the tool more widely usable.
 Several possibilities for further development are:
 -	Make digits object detection more accurate: currently if a digit object doesn’t have enough outer/bounding space, it won’t be detected as an object, i.e. if the digit object is connected to a column or row line like below:
         ![ScreenShot](https://github.com/boeml/ledgerrecogniser/blob/master/readmeimages/figure%2010.jpg)
@@ -106,6 +110,3 @@ Several possibilities for further development are:
 -	Allow user to design template to identify regions (with lines of rows and columns) which is applicable to a batch of similar files. This will automate the manual selection process of areas to recognise and enable batch processing of such files
 -	Can we extend the recognition from digits to letters (i.e. on counterparty names and other characters)?
 
-## 6. Publications
-
-<p align="justify">The recognition tool was used as the basis for Bank of England Working Paper No. 691, [The Bank of England as lender of last resort: new historical evidence from daily transactional data](https://www.bankofengland.co.uk/working-paper/2017/the-bank-of-england-as-lender-of-last-resort-new-historical-evidence-from-daily-transactional-data/) . Data can be found [here](https://www.bankofengland.co.uk/-/media/boe/files/research/the-bank-of-england-as-lender-of-last-resort-historical-dataset.xlsb?la=en&hash=5BC1800E6C6188AABEB79C8AEF6D5DFC5688B3B1) 
