@@ -10,7 +10,10 @@ OpenCV provides the main functionality for working with images of archive pages.
 
 ## 2. File and Folder Description 
 
-*```BoE digitised ledgers``` contains .jpg files of the digitised ledgers
+* ```BoE digitised ledgers``` contains .jpg files of the digitised ledgers
+* ```include``` contains class definitions and functions
+* ```readmeimages``` contains the images used in the README.md file
+* ```src``` contains the general implementation files and neural network folder
 
 ## 3. Publications
 
