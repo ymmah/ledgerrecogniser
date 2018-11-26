@@ -2,7 +2,7 @@
 
 This tool is used to extract numeric digits from images of handwritten ledgers.  
 
-Run over mid-nineteenth century Bank of England discount ledger files, this formed the basis of data for Anson M., Bholat D., Kang M. and Thomas R. (2017) ["The Bank of England as lender of last resort: new historical evidence from daily transactional data"](https://www.bankofengland.co.uk/-/media/boe/files/working-paper/2017/the-bank-of-england-as-lender-of-last-resort-a-new-historical-evidence-from-daily-transactional-data.pdf), Staff Working Paper No. 691, Bank of England.
+Run over mid-nineteenth century Bank of England discount ledger files, this formed the basis of data for Anson M., Bholat D., Kang M. and Thomas R. (2017) ["The Bank of England as lender of last resort: new historical evidence from daily transactional data"](https://www.bankofengland.co.uk/-/media/boe/files/working-paper/2017/the-bank-of-england-as-lender-of-last-resort-a-new-historical-evidence-from-daily-transactional-data.pdf), Staff Working Paper No. 691, Bank of England.This anaylsis featured as a [Bank Underground post.](https://bankunderground.co.uk/2017/12/11/looking-inside-the-ledgers-the-bank-of-england-as-a-lender-of-last-resort/)
 
 ## 1. Libraries and Setup Details
 
@@ -18,10 +18,6 @@ OpenCV provides the main functionality for working with images of archive pages.
 * ```include``` contains class definitions and functions
 * ```readmeimages``` contains the images used in the README.md file
 * ```src``` contains the general implementation files and neural network folder
-
-## 3. Publications
-
-The recognition tool was used as the basis for Bank of England Working Paper No. 691, [The Bank of England as lender of last resort: new historical evidence from daily transactional data](https://www.bankofengland.co.uk/working-paper/2017/the-bank-of-england-as-lender-of-last-resort-new-historical-evidence-from-daily-transactional-data). The data read from ledgers can be found [here](https://www.bankofengland.co.uk/-/media/boe/files/research/the-bank-of-england-as-lender-of-last-resort-historical-dataset.xlsb?la=en&hash=5BC1800E6C6188AABEB79C8AEF6D5DFC5688B3B1). This anaylsis featured as a [Bank Underground post.](https://bankunderground.co.uk/2017/12/11/looking-inside-the-ledgers-the-bank-of-england-as-a-lender-of-last-resort/)
 
 ## 4. Neural Network Recognition Tool:
 
